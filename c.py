@@ -35,6 +35,8 @@ def print_seq(seq):
 
 case=1
 for line in sys.stdin:
+    if case > 100:
+        exit
     keypress=[]
     #print "LINE:", line,
     for c in line:
