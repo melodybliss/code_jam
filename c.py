@@ -33,16 +33,14 @@ def print_seq(seq):
         last=i[0]
     return r
 
-case=1
+case=0
 for line in sys.stdin:
-    if case > 100:
-        exit
     keypress=[]
     #print "LINE:", line,
     for c in line:
         key = get_key(c)
         if key != None:
             keypress.append(key)
-
-    print 'Case #' + str(case) + ": " + print_seq(keypress)
     case += 1
+    if case <= 100:
+        print 'Case #' + str(case) + ": " + print_seq(keypress)
