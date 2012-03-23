@@ -34,13 +34,19 @@ def print_seq(seq):
     return r
 
 case=0
+maxlines=0
 for line in sys.stdin:
+    if case == 0:
+        # This should be the linecount
+        maxlines=int(line)
+        case += 1
+        continue
     keypress=[]
     #print "LINE:", line,
     for c in line:
         key = get_key(c)
         if key != None:
             keypress.append(key)
-    case += 1
-    if case <= 100:
+    if case <= maxlines:
         print 'Case #' + str(case) + ": " + print_seq(keypress)
+    case += 1
